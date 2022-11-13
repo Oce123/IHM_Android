@@ -4,20 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0AF6F5F8"
     tools:context=".SettingsActivity">
-
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Format 24h"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225
-" />
 
     <TextView
         android:id="@+id/textView"
@@ -38,22 +26,10 @@
         android:text="DECONNEXION / CHANGEMENT DE COMPTE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Afficher salles libres uniquement"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.821"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.325" />
+        app:layout_constraintVertical_bias="0.726" />
 
     <TextView
         android:id="@+id/textView9"
@@ -74,21 +50,83 @@
         android:text="Conditions Générales d'utilisation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.900" />
+        app:layout_constraintVertical_bias="0.842" />
 
-    <TextView
-        android:id="@+id/textView8"
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/format24"
+        android:layout_width="195dp"
+        android:layout_height="72dp"
+        android:text="Format 24h"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:thumb="@drawable/thumb"
+        app:showText="true"
+        app:track="@drawable/track"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="181dp" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/mode_sombre"
+        android:layout_width="215dp"
+        android:layout_height="64dp"
+        android:text="Mode sombre"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:thumb="@drawable/thumb"
+        app:showText="true"
+        app:track="@drawable/track"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="272dp" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/mode_3d"
+        android:layout_width="215dp"
+        android:layout_height="64dp"
+        android:text="Mode 3D"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:thumb="@drawable/thumb"
+        app:showText="true"
+        app:track="@drawable/track"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="423dp" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/affichage_salle"
+        android:layout_width="215dp"
+        android:layout_height="64dp"
+        android:text="Affichage salles libres uniquement"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:thumb="@drawable/thumb"
+        app:showText="true"
+        app:track="@drawable/track"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="348dp" />
+    <Button
+        android:id="@+id/deconnexion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mode clair / mode sombre"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.693"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.425" />
+        android:layout_marginTop="20dip"
+        android:background="@drawable/deconnexion"
+        android:text="Deconnexion"
+        android:textSize="20dp"
+        android:textColor="@android:color/white"
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="678dp"
+        />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="105dp"
+        android:layout_height="87dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/retour_button"
+        tools:layout_editor_absoluteX="-3dp"
+        tools:layout_editor_absoluteY="650dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
