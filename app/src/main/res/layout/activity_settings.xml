@@ -20,28 +20,16 @@
         app:layout_constraintVertical_bias="0.100" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DECONNEXION / CHANGEMENT DE COMPTE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.726" />
-
-    <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Contactez-nous"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.800" />
+        app:layout_constraintVertical_bias="0.772" />
 
     <TextView
         android:id="@+id/textView10"
@@ -57,29 +45,35 @@
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/format24"
-        android:layout_width="195dp"
-        android:layout_height="72dp"
+        android:layout_width="211dp"
+        android:layout_height="73dp"
+        android:layout_marginBottom="20dp"
         android:text="Format 24h"
         android:textOff="OFF"
         android:textOn="ON"
         android:thumb="@drawable/thumb"
+        app:layout_constraintBottom_toTopOf="@+id/mode_sombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
         app:showText="true"
-        app:track="@drawable/track"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="181dp" />
+        app:track="@drawable/track" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/mode_sombre"
         android:layout_width="215dp"
         android:layout_height="64dp"
+        android:layout_marginBottom="20dp"
         android:text="Mode sombre"
         android:textOff="OFF"
         android:textOn="ON"
         android:thumb="@drawable/thumb"
+        app:layout_constraintBottom_toTopOf="@+id/affichage_salle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
         app:showText="true"
-        app:track="@drawable/track"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="272dp" />
+        app:track="@drawable/track" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/mode_3d"
@@ -89,23 +83,28 @@
         android:textOff="OFF"
         android:textOn="ON"
         android:thumb="@drawable/thumb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:showText="true"
         app:track="@drawable/track"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="423dp" />
+        tools:layout_editor_absoluteY="419dp" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/affichage_salle"
         android:layout_width="215dp"
         android:layout_height="64dp"
+        android:layout_marginBottom="20dp"
         android:text="Affichage salles libres uniquement"
         android:textOff="OFF"
         android:textOn="ON"
         android:thumb="@drawable/thumb"
+        app:layout_constraintBottom_toTopOf="@+id/mode_3d"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
         app:showText="true"
-        app:track="@drawable/track"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="348dp" />
+        app:track="@drawable/track" />
+
     <Button
         android:id="@+id/deconnexion"
         android:layout_width="wrap_content"

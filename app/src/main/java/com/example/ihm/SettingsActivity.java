@@ -1,8 +1,13 @@
 package com.example.ihm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.*;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.TextView;
+
+
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -11,4 +16,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
     }
+
+
+
 }
