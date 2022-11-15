@@ -35,11 +35,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dip"
         android:background="@drawable/deconnexion"
-        android:text="Deconnexion"
+        android:text="Déconnexion"
         android:textSize="20dp"
         android:textColor="@android:color/white"
         tools:layout_editor_absoluteX="134dp"
         tools:layout_editor_absoluteY="678dp"
         />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
