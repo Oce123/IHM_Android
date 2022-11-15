@@ -9,15 +9,18 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="415dp"
+        android:layout_height="70dp"
+        android:background="@drawable/cadre"
+        android:gravity="center"
         android:text="PARAMETRES"
+        android:textColor="@android:color/white"
+        android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView9"
@@ -29,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.772" />
+        app:layout_constraintVertical_bias="0.957" />
 
     <TextView
         android:id="@+id/textView10"
@@ -38,10 +41,10 @@
         android:text="Conditions Générales d'utilisation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842" />
+        app:layout_constraintVertical_bias="0.984" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/format24"
@@ -56,6 +59,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="1.0"
         app:showText="true"
         app:track="@drawable/track" />
 
@@ -79,15 +84,17 @@
         android:id="@+id/mode_3d"
         android:layout_width="215dp"
         android:layout_height="64dp"
+        android:layout_marginBottom="224dp"
         android:text="Mode 3D"
         android:textOff="OFF"
         android:textOn="ON"
         android:thumb="@drawable/thumb"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
         app:showText="true"
-        app:track="@drawable/track"
-        tools:layout_editor_absoluteY="419dp" />
+        app:track="@drawable/track" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/affichage_salle"
@@ -106,26 +113,33 @@
         app:track="@drawable/track" />
 
     <Button
+        android:id="@+id/debug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/deconnexion"
+        android:onClick="retour"
+        android:text="Retour"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.124" />
+
+    <!--<Button
         android:id="@+id/deconnexion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dip"
         android:background="@drawable/deconnexion"
         android:text="Deconnexion"
-        android:textSize="20dp"
         android:textColor="@android:color/white"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="678dp"
-        />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="105dp"
-        android:layout_height="87dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/retour_button"
-        tools:layout_editor_absoluteX="-3dp"
-        tools:layout_editor_absoluteY="650dp" />
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="618dp" />
+     -->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

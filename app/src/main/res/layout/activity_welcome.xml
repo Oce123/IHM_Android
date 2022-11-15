@@ -6,4 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".WelcomeActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGO DE L'APPLI"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.235" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOM DE L'APPLI!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.297" />
+
+    <Button
+        android:id="@+id/deconnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dip"
+        android:background="@drawable/deconnexion"
+        android:text="Déconnexion"
+        android:textSize="20dp"
+        android:textColor="@android:color/white"
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="678dp"
+        />
+
+    <Button
+        android:id="@+id/OK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/deconnexion"
+        android:onClick="OK"
+        android:text="OK"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="259dp"
+        tools:layout_editor_absoluteY="396dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

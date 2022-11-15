@@ -6,4 +6,106 @@
     android:layout_height="match_parent"
     tools:context=".TableActivity">
 
+    <Button
+        android:id="@+id/parametre"
+        android:layout_width="156dp"
+        android:layout_height="48dp"
+        android:background="@drawable/deconnexion"
+        android:onClick="parametres"
+        android:text="Paramètres"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/epi6"
+        android:layout_width="52dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/deconnexion"
+        android:text="6"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.173" />
+
+    <Button
+        android:id="@+id/epi4"
+        android:layout_width="52dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/deconnexion"
+        android:text="4"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/epi5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.173" />
+
+    <Button
+        android:id="@+id/epi3"
+        android:layout_width="52dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/deconnexion"
+        android:text="3"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/epi4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.173" />
+
+    <Button
+        android:id="@+id/epi2"
+        android:layout_width="52dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/deconnexion"
+        android:text="2"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/epi3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.173" />
+
+    <Button
+        android:id="@+id/epi1"
+        android:layout_width="52dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/deconnexion"
+        android:text="1"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/epi2"
+        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.173" />
+
+    <Button
+        android:id="@+id/epi5"
+        android:layout_width="52dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/deconnexion"
+        android:text="5"
+        android:textColor="@android:color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/epi6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.173" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
