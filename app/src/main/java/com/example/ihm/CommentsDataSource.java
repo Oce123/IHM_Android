@@ -1,6 +1,7 @@
 package com.example.ihm;
 //package de.vogella.android.sqlite.first;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,12 +15,12 @@ public class CommentsDataSource {
 
     // Champs de la base de données
     private SQLiteDatabase database;
-    private SQL_lite dbHelper;
-    private String[] allColumns = { SQL_lite.COLUMN_ID,
-            SQL_lite.COLUMN_COMMENT };
+    private MySQLiteHelper dbHelper;
+    private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
+            MySQLiteHelper.COLUMN_COMMENT };
 
     public CommentsDataSource(Context context) {
-        dbHelper = new SQL_lite(context);
+        dbHelper = new MySQLiteHelper(context);
     }
 
     public void open() throws SQLException {
@@ -32,11 +33,11 @@ public class CommentsDataSource {
 
     public Comment createComment(String comment) {
         ContentValues values = new ContentValues();
-        values.put(SQL_lite.COLUMN_COMMENT, comment);
-        long insertId = database.insert(SQL_lite.TABLE_COMMENTS, null,
+        values.put(MySQLiteHelper.COLUMN_COMMENT, comment);
+        long insertId = database.insert(MySQLiteHelper.TABLE_COMMENTS, null,
                 values);
-        Cursor cursor = database.query(SQL_lite.TABLE_COMMENTS,
-                allColumns, SQL_lite.COLUMN_ID + " = " + insertId, null,
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
+                allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertId, null,
                 null, null, null);
         cursor.moveToFirst();
         Comment newComment = cursorToComment(cursor);
@@ -47,14 +48,14 @@ public class CommentsDataSource {
     public void deleteComment(Comment comment) {
         long id = comment.getId();
         System.out.println("Comment deleted with id: " + id);
-        database.delete(SQL_lite.TABLE_COMMENTS, SQL_lite.COLUMN_ID
+        database.delete(MySQLiteHelper.TABLE_COMMENTS, MySQLiteHelper.COLUMN_ID
                 + " = " + id, null);
     }
 
     public List<Comment> getAllComments() {
         List<Comment> comments = new ArrayList<Comment>();
 
-        Cursor cursor = database.query(SQL_lite.TABLE_COMMENTS,
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_COMMENTS,
                 allColumns, null, null, null, null, null);
 
         cursor.moveToFirst();
