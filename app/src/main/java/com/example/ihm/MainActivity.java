@@ -4,10 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 //AppCompatActivity
 
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.*;
+import java.io.*;
 import java.util.List;
 import java.util.Random;
 
@@ -15,6 +21,7 @@ import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 public class MainActivity extends ListActivity {
     private CommentsDataSource datasource;
@@ -36,7 +43,7 @@ public class MainActivity extends ListActivity {
         setListAdapter(adapter);
     }
 
-    public void redirection(View view){
+    public void redirection(View view) {
         Intent redirect = new Intent(this, TableActivity.class);
         startActivity(redirect);
     }
@@ -49,7 +56,7 @@ public class MainActivity extends ListActivity {
         Comment comment = null;
         switch (view.getId()) {
             case R.id.add:
-                String[] comments = new String[] { "Cool", "Very nice", "Hate it" };
+                String[] comments = new String[]{"Cool", "Very nice", "Hate it"};
                 int nextInt = new Random().nextInt(3);
                 // enregistrer le nouveau commentaire dans la base de données
                 comment = datasource.createComment(comments[nextInt]);
@@ -78,4 +85,66 @@ public class MainActivity extends ListActivity {
         super.onPause();
     }
 
+    private boolean checkInternetConnection() {
+        // get Connectivity Manager object to check connection
+        ConnectivityManager connec =(ConnectivityManager)getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
+
+        // Check for network connections
+        if ( connec.getNetworkInfo(0).getState() ==
+                android.net.NetworkInfo.State.CONNECTED ||
+                connec.getNetworkInfo(0).getState() ==
+                        android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() ==
+                        android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTED ) {
+            Toast.makeText(this, " Connected ", Toast.LENGTH_LONG).show();
+            return true;
+        }else if (
+                connec.getNetworkInfo(0).getState() ==
+                        android.net.NetworkInfo.State.DISCONNECTED ||
+                        connec.getNetworkInfo(1).getState() ==
+                                android.net.NetworkInfo.State.DISCONNECTED  ) {
+            Toast.makeText(this, " Not Connected ", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return false;
+    }
+
+
+    private InputStream openHttpConnection(){
+        InputStream in = null;
+        int resCode = -1;
+        try {
+            String link = "https://planif.esiee.fr/jsp/standard/index.jsp";
+            URL url = new URL(link);
+            HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+            httpConn.setRequestMethod("GET");
+            httpConn.connect();
+            resCode = httpConn.getResponseCode();
+            if (resCode == HttpURLConnection.HTTP_OK) {
+                in = httpConn.getInputStream();
+            }
+        }
+        catch (MalformedURLException e) {
+            e.printStackTrace();}
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    return in;
+    }
+
+    private void getDataConnection(){
+
+    }
+
+    public void main(){
+        checkInternetConnection();
+        openHttpConnection();
+        getDataConnection();
+    }
 }
+
+
+
+
+
