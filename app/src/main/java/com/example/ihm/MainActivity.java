@@ -21,6 +21,7 @@ import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.w3c.dom.Document;
@@ -32,6 +33,8 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
     MainFragment mainFragment;
+
+    private Spinner spinnerheure;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
