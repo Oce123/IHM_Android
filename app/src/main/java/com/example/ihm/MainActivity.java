@@ -23,7 +23,15 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
-public class MainActivity extends ListActivity {
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+public class MainActivity extends AppCompatActivity {
+    MainFragment mainFragment;
     private CommentsDataSource datasource;
 
     @Override
@@ -31,16 +39,19 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        datasource = new CommentsDataSource(this);
-        datasource.open();
+       // datasource = new CommentsDataSource(this);
+        //datasource.open();
 
-        List<Comment> values = datasource.getAllComments();
+        //List<Comment> values = datasource.getAllComments();
 
         // utilisez SimpleCursorAdapter pour afficher les
         // éléments dans une ListView
-        ArrayAdapter<Comment> adapter = new ArrayAdapter<Comment>(this,
-                android.R.layout.simple_list_item_1, values);
-        setListAdapter(adapter);
+       // ArrayAdapter<Comment> adapter = new ArrayAdapter<Comment>(this,
+         //       android.R.layout.simple_list_item_1, values);
+        //setListAdapter(adapter);
+
+        //connexion a http
+        HttpConnection();
     }
 
     public void redirection(View view) {
@@ -85,37 +96,12 @@ public class MainActivity extends ListActivity {
         super.onPause();
     }
 
-    private boolean checkInternetConnection() {
-        // get Connectivity Manager object to check connection
-        ConnectivityManager connec =(ConnectivityManager)getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
 
-        // Check for network connections
-        if ( connec.getNetworkInfo(0).getState() ==
-                android.net.NetworkInfo.State.CONNECTED ||
-                connec.getNetworkInfo(0).getState() ==
-                        android.net.NetworkInfo.State.CONNECTING ||
-                connec.getNetworkInfo(1).getState() ==
-                        android.net.NetworkInfo.State.CONNECTING ||
-                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTED ) {
-            Toast.makeText(this, " Connected ", Toast.LENGTH_LONG).show();
-            return true;
-        }else if (
-                connec.getNetworkInfo(0).getState() ==
-                        android.net.NetworkInfo.State.DISCONNECTED ||
-                        connec.getNetworkInfo(1).getState() ==
-                                android.net.NetworkInfo.State.DISCONNECTED  ) {
-            Toast.makeText(this, " Not Connected ", Toast.LENGTH_LONG).show();
-            return false;
-        }
-        return false;
-    }
-
-
-    private InputStream openHttpConnection(){
+    private InputStream HttpConnection(){
         InputStream in = null;
         int resCode = -1;
         try {
-            String link = "https://planif.esiee.fr/jsp/standard/index.jsp";
+            String link = "https://planif.esiee.fr:443/jsp/webapi?function=connect&login=lecteur1&password=";
             URL url = new URL(link);
             HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
             httpConn.setRequestMethod("GET");
@@ -124,24 +110,26 @@ public class MainActivity extends ListActivity {
             if (resCode == HttpURLConnection.HTTP_OK) {
                 in = httpConn.getInputStream();
             }
+            // get data
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document document = db.parse(url.openStream());
+
         }
         catch (MalformedURLException e) {
             e.printStackTrace();}
         catch (IOException e) {
             e.printStackTrace();
         }
-    return in;
+        catch (SAXException e) {
+            e.printStackTrace();
+        }
+        catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+        return in;
     }
 
-    private void getDataConnection(){
-
-    }
-
-    public void main(){
-        checkInternetConnection();
-        openHttpConnection();
-        getDataConnection();
-    }
 }
 
 
