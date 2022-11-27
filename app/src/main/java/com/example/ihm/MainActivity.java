@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 //AppCompatActivity
 
 import java.io.BufferedInputStream;
@@ -32,28 +34,35 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
-    MainFragment mainFragment;
+    //MainFragment mainFragment;
 
-    private Spinner spinnerheure;
+    EditText numero, heure, heure2;
+    Button b;
+
+    Helper h = new Helper(MainActivity.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       // datasource = new CommentsDataSource(this);
-        //datasource.open();
+        numero = findViewById(R.id.numero);
+        heure = findViewById(R.id.heure);
+        heure2 = findViewById(R.id.heure_fin);
+        b = findViewById(R.id.ajouter);
 
-        //List<Comment> values = datasource.getAllComments();
-
-        // utilisez SimpleCursorAdapter pour afficher les
-        // éléments dans une ListView
-       // ArrayAdapter<Comment> adapter = new ArrayAdapter<Comment>(this,
-         //       android.R.layout.simple_list_item_1, values);
-        //setListAdapter(adapter);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Salle_disponible s = new Salle_disponible(numero.getText().toString(),Double.parseDouble(heure.getText().toString()), Double.parseDouble(heure2.getText().toString()));
+                h.insertSalle(s);
+                Intent i = new Intent(MainActivity.this, ListeSalle.class);
+                startActivity(i);
+            }
+        });
 
         //connexion a http
-        HttpConnection();
+        //HttpConnection();
     }
 
     public void redirection(View view) {
@@ -61,7 +70,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(redirect);
     }
 
-    private InputStream HttpConnection(){
+    public void liste_salle(View view){
+        Intent bouton_salle = new Intent(this, ListeSalle.class);
+        startActivity(bouton_salle);
+    }
+
+    /*private InputStream HttpConnection(){
         InputStream in = null;
         int resCode = -1;
         try {
@@ -93,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return in;
     }
+     */
 
 }
 

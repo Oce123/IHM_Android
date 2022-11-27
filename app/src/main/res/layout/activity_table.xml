@@ -109,7 +109,7 @@
         app:layout_constraintVertical_bias="0.173" />
 
     <Spinner
-        android:id="@+id/heure_demandee"
+        android:id="@+id/heure_de_debut"
         android:layout_width="198dp"
         android:layout_height="31dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -118,5 +118,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
+
+    <Spinner
+        android:id="@+id/heure_de_fin"
+        android:layout_width="198dp"
+        android:layout_height="31dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065" />
+
+    <Button
+        android:id="@+id/retour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="back"
+        android:text="Retour"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

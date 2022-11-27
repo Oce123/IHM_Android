@@ -19,6 +19,7 @@
         app:layout_constraintVertical_bias="0.408" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NOM DE L'APPLI!"
@@ -35,7 +36,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/deconnexion"
         android:onClick="redirection"
-        android:text="debug"
+        android:text="Lancer l'appli"
         android:textColor="@android:color/white"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,39 +45,77 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     //-------------------------
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
-    <LinearLayout
-        android:id="@+id/group"
+
+    <Button
+        android:id="@+id/ajouter"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:text="Ajouter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.202" />
 
-        <Button
-            android:id="@+id/add"
+    <Button
+        android:id="@+id/liste_salle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="liste_salle"
+        android:text="Liste des salles"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.202" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="414dp"
+        android:layout_height="141dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-3dp">
+
+        <LinearLayout
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello" />
+
+        <EditText
+            android:id="@+id/numero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add New"
-            android:onClick="onClick"/>
+            android:ems="10"
+            android:hint="Numero de salle"
+            android:inputType="textPersonName" />
 
-        <Button
-            android:id="@+id/delete"
+        <EditText
+            android:id="@+id/heure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onClick"
-            android:text="Delete First" />
+            android:ems="10"
+            android:hint="Heure de début"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/heure_fin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Heure de fin"
+            android:inputType="textPersonName" />
 
     </LinearLayout>
-
-    <ListView
-        android:id="@android:id/list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hello" />
-</LinearLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
