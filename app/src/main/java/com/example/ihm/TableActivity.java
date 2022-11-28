@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class TableActivity extends AppCompatActivity {
 
     private Spinner spinnerHeure;
+    private Spinner spinnerHeure_de_fin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +45,44 @@ public class TableActivity extends AppCompatActivity {
             }
         });
 
+        this.spinnerHeure_de_fin = (Spinner) findViewById(R.id.heure_de_fin);
+        Heure_de_fin[] heure_de_fins = HeureDataUtils.getHeure_de_fin();
+
+        ArrayAdapter<Heure_de_fin> adapter2 = new ArrayAdapter<Heure_de_fin>(this,
+                android.R.layout.simple_spinner_item,
+                heure_de_fins);
+
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        this.spinnerHeure_de_fin.setAdapter(adapter2);
+
+        this.spinnerHeure_de_fin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                onItemSelectedHandler2(parent, view, position, id);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
     private void onItemSelectedHandler(AdapterView<?> adapterView, View view, int position, long id) {
         Adapter adapter = adapterView.getAdapter();
         Heure heure = (Heure) adapter.getItem(position);
 
-        Toast.makeText(getApplicationContext(), "Heure selectionnée: " + heure.getFullHeure() ,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Heure de début selectionnée: " + heure.getFullHeure() ,Toast.LENGTH_SHORT).show();
+    }
+
+    private void onItemSelectedHandler2(AdapterView<?> adapterView, View view, int position, long id) {
+        Adapter adapter = adapterView.getAdapter();
+        Heure_de_fin heure_de_fin = (Heure_de_fin) adapter.getItem(position);
+
+        Toast.makeText(getApplicationContext(), "Heure de fin selectionnée: " + heure_de_fin.getFullHeure_de_fin() ,Toast.LENGTH_SHORT).show();
     }
 
 
