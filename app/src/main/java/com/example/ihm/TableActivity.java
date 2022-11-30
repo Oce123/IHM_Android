@@ -22,6 +22,7 @@ public class TableActivity extends AppCompatActivity {
         setContentView(R.layout.activity_table);
 
         this.spinnerHeure = (Spinner) findViewById(R.id.heure_de_debut);
+        //Debut format 24h
         Heure[] heure = HeureDataUtils.getHeure();
 
         ArrayAdapter<Heure> adapter = new ArrayAdapter<Heure>(this,
@@ -68,6 +69,7 @@ public class TableActivity extends AppCompatActivity {
 
             }
         });
+        //Fin format 24h
 
     }
 
