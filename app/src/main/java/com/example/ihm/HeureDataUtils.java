@@ -37,20 +37,20 @@ public class HeureDataUtils {
     }
 
     public static Heure_12[] getHeure_12()  {
-        Heure_12 h1 = new Heure_12(8, "00");
-        Heure_12 h2 = new Heure_12(9, "00");
-        Heure_12 h3 = new Heure_12(10, "00");
-        Heure_12 h4 = new Heure_12(11, "00");
-        Heure_12 h5 = new Heure_12(12, "00");
-        Heure_12 h6 = new Heure_12(13, "00");
-        Heure_12 h7 = new Heure_12(14, "00");
-        Heure_12 h8 = new Heure_12(15, "00");
-        Heure_12 h9 = new Heure_12(16, "00");
-        Heure_12 h10 = new Heure_12(17, "00");
-        Heure_12 h11 = new Heure_12(18, "00");
-        Heure_12 h12 = new Heure_12(19, "00");
+        Heure_12 h1 = new Heure_12(8, "00", "AM");
+        Heure_12 h2 = new Heure_12(9, "00", "AM");
+        Heure_12 h3 = new Heure_12(10, "00", "AM");
+        Heure_12 h4 = new Heure_12(11, "00", "AM");
+        Heure_12 h5 = new Heure_12(12, "00", "AM");
+        Heure_12 h6 = new Heure_12(1, "00","PM");
+        Heure_12 h7 = new Heure_12(2, "00","PM");
+        Heure_12 h8 = new Heure_12(3, "00","PM");
+        Heure_12 h9 = new Heure_12(4, "00","PM");
+        Heure_12 h10 = new Heure_12(5, "00","PM");
+        Heure_12 h11 = new Heure_12(6, "00","PM");
+        Heure_12 h12 = new Heure_12(7, "00", "PM");
 
-        return new Heure[] {h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12};
+        return new Heure_12[] {h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12};
     }
 
 
